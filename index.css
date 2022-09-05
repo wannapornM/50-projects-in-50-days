@@ -1,4 +1,5 @@
 @import "./src/styles/expanding_cards.css";
+@import "./src/styles/progress_steps.css";
 
 body {
   margin: 0;

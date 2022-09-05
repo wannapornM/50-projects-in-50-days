@@ -1,0 +1,64 @@
+#progress-steps {
+  width: 500px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #a9f5a9;
+}
+
+#progress-steps .progress-container {
+  width: fit-content;
+  position: relative;
+  display: flex;
+  gap: 4rem;
+  z-index: 0;
+}
+
+#progress-steps .progress-container::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: white;
+  top: 50%;
+  left: 0;
+  z-index: -2;
+}
+
+#progress-steps .progress-container .circle {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: white;
+}
+
+#progress-steps .progress-container .circle.active {
+  border-color: blue;
+}
+
+#progress-steps .progress-container .progress-line {
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: blue;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+}
+
+#progress-steps .progress-btn {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
