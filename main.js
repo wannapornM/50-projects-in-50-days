@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 
 // expanding-cards
 const cards = document.querySelectorAll(".card");
