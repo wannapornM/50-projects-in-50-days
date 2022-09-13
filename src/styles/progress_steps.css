@@ -1,24 +1,24 @@
 #progress-steps {
-  width: 500px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 1rem auto;
   padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background-color: #a9f5a9;
 }
 
 #progress-steps .progress-container {
-  width: fit-content;
-  position: relative;
+  width: 100%;
+  max-width: 500px;
   display: flex;
-  gap: 4rem;
+  justify-content: space-between;
+  position: relative;
   z-index: 0;
 }
 
-#progress-steps .progress-container:before {
+#progress-steps .progress-container::before {
   content: "";
   width: 100%;
   height: 3px;
@@ -26,6 +26,7 @@
   background-color: #dbd5d5;
   top: 50%;
   left: 0;
+  transform: translateY(-50%);
   z-index: -2;
 }
 
@@ -59,7 +60,7 @@
 #progress-steps .progress-btn {
   width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 10%;
   justify-content: center;
 }
 
