@@ -37,9 +37,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #dbd5d5;
+  border: 3px solid #dbd5d5;
+  transition: border 0.5s ease;
 }
 
 #progress-steps .progress-container .circle.active {
@@ -54,7 +53,7 @@
   top: 50%;
   left: 0;
   z-index: -1;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease;
 }
 
 #progress-steps .progress-btn {
@@ -62,4 +61,18 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
+}
+
+#progress-steps .progress-btn button {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #03a9f4;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#progress-steps .progress-btn button:disabled {
+  background-color: #dbd5d5;
+  cursor: not-allowed;
 }
