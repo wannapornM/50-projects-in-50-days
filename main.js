@@ -113,6 +113,7 @@ function slider(direction) {
 }
 
 // --- Github profile ---
+const main = document.getElementById("github-profile-container");
 const form = document.getElementById("github-search-box");
 const nameInput = document.getElementById("github-search");
 const URL = "https://api.github.com/users/";
@@ -134,6 +135,9 @@ async function getUserInfo(userName) {
 
     createUserProfileCard(data);
   } catch (err) {
+    if (err.response.status === 404) {
+      createErrorCard("No user profile with this username");
+    }
     console.error(err);
   }
 }
@@ -149,7 +153,9 @@ function createUserProfileCard(userInfo) {
       />
       <div class="user-info">
         <div class="user-info-name">${userInfo.name}</div>
-        <p class="user-info-bio">${userInfo.bio}</p>
+        <p class="user-info-bio">${
+          userInfo.bio === null ? "-" : userInfo.bio
+        }</p>
 
         <ul>
           <li><span>${userInfo.followers}</span> followers</li>
@@ -165,4 +171,16 @@ function createUserProfileCard(userInfo) {
       </div>
     </div>
   `;
+
+  main.innerHTML = userProfileCard;
+}
+
+function createErrorCard(msg) {
+  const errorCard = `
+    <div class="user-profile">
+      <h1>${msg}</h1>
+    </div>
+  `;
+
+  main.innerHTML = errorCard;
 }
