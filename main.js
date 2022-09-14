@@ -111,3 +111,58 @@ function slider(direction) {
     activeSlideIndx * sliderHeight
   }px)`;
 }
+
+// --- Github profile ---
+const form = document.getElementById("github-search-box");
+const nameInput = document.getElementById("github-search");
+const URL = "https://api.github.com/users/";
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const userName = nameInput.value;
+
+  if (userName) {
+    getUserInfo(userName);
+    nameInput.value = "";
+  }
+});
+
+async function getUserInfo(userName) {
+  try {
+    const resp = await axios(URL + userName);
+    const data = await resp.data;
+
+    createUserProfileCard(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function createUserProfileCard(userInfo) {
+  console.log(userInfo);
+
+  const userProfileCard = `
+    <div class="user-profile">
+      <img
+        src="${userInfo.avatar_url}"
+        alt="User image"
+      />
+      <div class="user-info">
+        <div class="user-info-name">${userInfo.name}</div>
+        <p class="user-info-bio">${userInfo.bio}</p>
+
+        <ul>
+          <li><span>${userInfo.followers}</span> followers</li>
+          <li><span>${userInfo.following}</span> following</li>
+          <li><span>${userInfo.public_repos}</span> repos</li>
+        </ul>
+
+        <div class="user-info-repos">
+          <a href="#">repo1</a>
+          <a href="#">repo2</a>
+          <a href="#">repo3</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
