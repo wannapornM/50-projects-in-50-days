@@ -69,7 +69,9 @@ function updateProgressStyle() {
 }
 
 // double vertical slider
-const sliderContainer = document.getElementById("double-vertical-slider");
+const sliderHeight = document.getElementById(
+  "double-vertical-slider"
+).clientHeight;
 const leftSlide = document.querySelector(".left-slide");
 const rightSlide = document.querySelector(".right-slide");
 const slideRightLength = rightSlide.querySelectorAll("div").length;
@@ -78,7 +80,7 @@ const downBtn = document.querySelector(".down-btn");
 let activeSlideIndx = 0;
 
 // Configure for slide from up to down
-rightSlide.style.top = `-${(slideRightLength - 1) * 100}vh`;
+rightSlide.style.top = `-${(slideRightLength - 1) * sliderHeight}px`;
 
 upBtn.addEventListener("click", function () {
   slider("up");
@@ -88,8 +90,6 @@ downBtn.addEventListener("click", function () {
 });
 
 function slider(direction) {
-  const sliderHeight = sliderContainer.clientHeight;
-
   if (direction === "up") {
     activeSlideIndx++;
 
