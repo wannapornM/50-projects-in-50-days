@@ -1,0 +1,81 @@
+#github-profile {
+  background-color: #5f548a;
+  form {
+    width: 100%;
+    max-width: 600px;
+    margin: 3rem auto 2rem;
+
+    input {
+      width: 100%;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 8px;
+      background-color: #9084c1;
+      color: white;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      &::placeholder {
+        color: #6d737d;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  main {
+    .user-profile {
+      width: 100%;
+      max-width: 536px;
+      display: flex;
+      padding: 2rem;
+      margin: 0 auto 3rem;
+      gap: 2rem;
+      background-color: #9084c1;
+      border-radius: 8px;
+
+      img {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+        border-radius: 50%;
+      }
+
+      .user-info {
+        color: #fff;
+
+        &-name {
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        ul {
+          margin-top: 0;
+          display: inline-flex;
+          list-style-type: none;
+          padding: 0;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        &-repos {
+          a {
+            text-decoration: none;
+            color: white;
+            background-color: rgb(0, 0, 0, 0.3);
+            padding: 2px 12px;
+            border-radius: 8px;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
