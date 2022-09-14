@@ -134,6 +134,7 @@ async function getUserInfo(userName) {
     const data = await resp.data;
 
     createUserProfileCard(data);
+    getUserRepos(userName);
   } catch (err) {
     if (err.response.status === 404) {
       createErrorCard("No user profile with this username");
@@ -142,9 +143,15 @@ async function getUserInfo(userName) {
   }
 }
 
-function createUserProfileCard(userInfo) {
-  console.log(userInfo);
+async function getUserRepos(userName) {
+  try {
+    const { data } = await axios(URL + userName + "/repos");
+  } catch (err) {
+    createErrorCard("Problem with fetching user repositories");
+  }
+}
 
+function createUserProfileCard(userInfo) {
   const userProfileCard = `
     <div class="user-profile">
       <img
