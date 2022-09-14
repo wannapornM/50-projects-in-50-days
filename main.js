@@ -146,6 +146,8 @@ async function getUserInfo(userName) {
 async function getUserRepos(userName) {
   try {
     const { data } = await axios(URL + userName + "/repos");
+
+    addReposToCard(data);
   } catch (err) {
     createErrorCard("Problem with fetching user repositories");
   }
@@ -170,11 +172,7 @@ function createUserProfileCard(userInfo) {
           <li><span>${userInfo.public_repos}</span> repos</li>
         </ul>
 
-        <div class="user-info-repos">
-          <a href="#">repo1</a>
-          <a href="#">repo2</a>
-          <a href="#">repo3</a>
-        </div>
+        <div class="user-info-repos"></div>
       </div>
     </div>
   `;
@@ -190,4 +188,16 @@ function createErrorCard(msg) {
   `;
 
   main.innerHTML = errorCard;
+}
+
+function addReposToCard(repos) {
+  const reposElement = document.querySelector(".user-info-repos");
+
+  repos.forEach((repo) => {
+    const repoElement = document.createElement("a");
+    repoElement.href = repo.html_url;
+    repoElement.innerText = repo.name;
+
+    reposElement.appendChild(repoElement);
+  });
 }
