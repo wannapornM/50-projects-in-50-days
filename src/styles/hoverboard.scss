@@ -1,0 +1,25 @@
+#hoverboard {
+  background-color: rgb(24, 23, 23);
+
+  .hover-box-container {
+    width: 60%;
+    max-width: 600px;
+    margin: 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    .box {
+      width: 25px;
+      height: 25px;
+      background-color: rgb(131, 124, 124);
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      transition: 0.3s ease-in;
+
+      &:hover {
+        transition-duration: 0s;
+      }
+    }
+  }
+}
