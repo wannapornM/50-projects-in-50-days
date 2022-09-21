@@ -230,3 +230,25 @@ function removeColor(square) {
   square.style.backgroundColor = "rgb(131, 124, 124)";
   square.style.boxShadow = "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px";
 }
+
+// 3D Background boxes
+const magixBoxes = document.querySelector(".magic-box-container");
+const magicBtn = document.querySelector(".magic-btn");
+
+createMagicBox();
+
+magicBtn.addEventListener("click", () => {
+  magixBoxes.classList.toggle("big");
+});
+
+function createMagicBox() {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const box = document.createElement("div");
+      box.classList.add("box");
+      box.style.backgroundPosition = `-${j * 100}px -${i * 100}px`;
+
+      magixBoxes.appendChild(box);
+    }
+  }
+}

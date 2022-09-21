@@ -1,5 +1,4 @@
 #threed-background-boxes {
-  background-color: bisque;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,14 +23,13 @@
   }
 
   .magic-box-container {
-    background-color: lightcyan;
     width: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease;
 
     &.big {
       width: 332px;
