@@ -63,7 +63,7 @@
       #f6f7f8 20%,
       #f6f7f8 100%
     );
-    background-size: 200% 100%;
+    background-size: 200%;
     animation: bgPosition 1s linear infinite;
   }
 
@@ -76,7 +76,7 @@
       background-position: 50% 0;
     }
     100% {
-      background-position: -150% 0;
+      background-position: -100% 0;
     }
   }
 }

@@ -23,5 +23,5 @@ export default function contentPlaceholder() {
     );
   }
 
-  // setTimeout(getData, 2000);
+  setTimeout(getData, 2000);
 }
