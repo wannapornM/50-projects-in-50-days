@@ -1,3 +1,5 @@
+import contentPlaceholder from "./src/javascript/contentPlaceholder";
+
 import "./index.scss";
 
 // expanding-cards
@@ -252,3 +254,5 @@ function createMagicBox() {
     }
   }
 }
+
+contentPlaceholder();
